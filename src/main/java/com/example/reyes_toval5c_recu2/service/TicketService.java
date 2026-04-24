@@ -23,7 +23,6 @@ public class TicketService {
 
     public String crearTicket(@Valid TicketDTO ticket) {
 
-
         Usuario u = getUsuario(ticket.usuarioId());
 
         if (!u.isActivo()) {
@@ -31,7 +30,6 @@ public class TicketService {
         }
 
         // Se crea el estado desde el constructor personalizado y ahí se crea como abierto.
-
         Ticket ticketEntity = new Ticket(
                 u,
                 ticket.descripcion(),
@@ -73,11 +71,14 @@ public class TicketService {
     public String reasignarPrioridad(PrioridadDTO dto) {
 
         Ticket t = getTicket(dto.ticketId());
+
         if (t.getEstado() == Estado.CERRADO) {
             throw new IllegalStateException("Este ticket ya no se puede modificar");
         } else if (t.getPrioridad() == dto.prioridad()) {
             return "El ticket ya se encuentra en prioridad: " + t.getPrioridad().toString();
         }
+
+        t.setPrioridad(dto.prioridad());
 
         ticketRepository.save(t);
 

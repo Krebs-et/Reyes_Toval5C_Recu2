@@ -4,6 +4,7 @@ import com.example.reyes_toval5c_recu2.controller.dto.PrioridadDTO;
 import com.example.reyes_toval5c_recu2.controller.dto.TicketDTO;
 import com.example.reyes_toval5c_recu2.model.Ticket;
 import com.example.reyes_toval5c_recu2.service.TicketService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/tickets")
+@RequiredArgsConstructor
 public class TicketController {
 
-    private TicketService ticketService;
-
+    private final TicketService ticketService;
 
     @PostMapping("/crear")
     public ResponseEntity<String> crearTicket(@RequestBody TicketDTO ticket) {

@@ -24,6 +24,7 @@ public class Ticket {
     @Enumerated(EnumType.STRING)
     private Estado estado;
 
+    @Setter
     @Enumerated(EnumType.STRING)
     private Prioridad prioridad;
 
