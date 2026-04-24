@@ -5,7 +5,6 @@ import com.example.reyes_toval5c_recu2.controller.dto.TicketDTO;
 import com.example.reyes_toval5c_recu2.model.Ticket;
 import com.example.reyes_toval5c_recu2.model.Usuario;
 import com.example.reyes_toval5c_recu2.model.enums.Estado;
-import com.example.reyes_toval5c_recu2.model.enums.Prioridad;
 import com.example.reyes_toval5c_recu2.model.repository.TicketRepository;
 import com.example.reyes_toval5c_recu2.model.repository.UsuarioRepository;
 import jakarta.validation.Valid;
